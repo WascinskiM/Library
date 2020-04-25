@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Wyszystkie dane</title>
+</head>
+
+<body>
+<h1>Wszystkie Dane:</h1>
+
+<table>
+
+
+    <tr th:each="author: ${authors}">
+        <th th:text="${author.id}">ID</th>
+        <th th:text="${author.firstName}">ID</th>
+        <th th:text="${author.lastName}">ID</th>
+
+    </tr>
+    <tr>
+
+
+    </tr>
+
+    <tr th:each="book: ${books}">
+        <th th:text="${book.id}">ID</th>
+        <th th:text="${book.Title}">ID</th>
+        <th th:text="${book.Year}">ID</th>
+
+    </tr>
+
+    <tr th:each="print: ${printHouse}">
+        <th th:text="${print.id}">ID</th>
+        <th th:text="${print.name}">ID</th>
+    <table>
+    <tr th:each="book: ${print.books}">
+        <th th:text="${book.Title}"></th>
+    </tr>
+    </table>
+    </tr>
+
+
+
+    <tr th:each="order: ${orders}">
+        <th th:text="${order.id}">ID</th>
+        <th th:text="${order.lendData}">ID</th>
+        <th th:text="${order.person.firstName}">ID</th>
+        <th th:text="${order.person.lastName}">ID</th>
+        <th th:text="${order.person.pesel}">ID</th>
+        <table>
+            <tr th:each="book : ${order.books}">
+                <th th:text="${book.Title}"></th>
+
+            </tr>
+
+        </table>
+
+
+
+    </tr>
+
+
+</table>
+
+
+</body>
+</html>
